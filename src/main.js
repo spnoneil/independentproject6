@@ -10,8 +10,13 @@ import CurrencyService from './services/currency-service.js'
 
 function getCurrency(response) { //MATH GO HERE?
   if (response.result) {
-    console.log(response) // gets full object!
-    $('#output').text(`${response.conversion_rates}`)
+    const base = $('#baseCurrency').val();
+    // const conversion = $('#conversionCurrency').val();
+    const currencyArr = Object.entries(response.conversion_rates)
+    for (let i = 0; i < currencyArr.length; i++)
+      if (currencyArr[i][0] === base) {
+        console.log(currencyArr[i])
+      }
   } else {
     $('#output').text(`${response}`)
   }
@@ -19,7 +24,6 @@ function getCurrency(response) { //MATH GO HERE?
 
 async function apiCall(baseCurrency) {
   const response = await CurrencyService.getCurrency(baseCurrency);
-  console.log(response)
   getCurrency(response);
 }
 

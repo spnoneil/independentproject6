@@ -18,12 +18,16 @@ function getExchange(response) { //MATH GO HERE?
         $('#output').text(amount * currencyArr[i][1]);
       }
   } else {
-    $('#output').text(`${response}`)
+    $('#output').text(`${response.error}`)
   }
 }
 
 async function apiCall(baseCurrency) {
   const response = await CurrencyService.getCurrency(baseCurrency);
+  console.log(response)
+  if (response["error-type"] === "unsupported-code") {
+    $('#output').text('This is unsupported')
+  }
   return getExchange(response);
 }
 

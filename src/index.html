@@ -5,16 +5,20 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>Totally Awesome Currency Calculator</h1>
-    <h6>We use the 3 letter currency code here, e.g. EUR, USD, etc(but not that last one)</h6>
-    <label for="baseCurrency">Please enter the currency you want to exchange:</label>
-    <input type="text" id="baseCurrency">
-    <label for="conversionCurrency">Please enter the currency you want to change into:</label>
-    <input type="text" id="conversionCurrency">
-    <label for="currencyAmount">Please enter how much dosh you want to exchange:</label>
-    <input type="number" id="currencyAmount">
-  </div>
+  <form action="submit" id="formOne">
+    <div class="container">
+      <h1>Totally Awesome Currency Calculator</h1>
+      <h6>We use the 3 letter currency code here, e.g. EUR, USD, etc(but not that last one)</h6>
+      <label for="baseCurrency">Please enter the currency you want to exchange:</label>
+      <input type="text" id="baseCurrency" required>
+      <label for="conversionCurrency">Please enter the currency you want to change into:</label>
+      <input type="text" id="conversionCurrency" required>
+      <label for="currencyAmount">Please enter how much dosh you want to exchange:</label>
+      <input type="number" id="currencyAmount" required>
+      <button type="submit" id="submitBtn">Go!</button>
+      <div id="output"></div>
+    </div>
+  </form>
 </body>
 
 </html>

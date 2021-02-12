@@ -10,12 +10,12 @@ import CurrencyService from './services/currency-service.js'
 
 function getExchange(response) { //MATH GO HERE?
   if (response.result) {
-    // const base = $('#baseCurrency').val();
+    const amount = $('#currencyAmount').val();
     const conversion = $('#conversionCurrency').val();
     const currencyArr = Object.entries(response.conversion_rates)
     for (let i = 0; i < currencyArr.length; i++)
       if (currencyArr[i][0] === conversion) {
-        return (currencyArr[i][1]);
+        $('#output').text(amount * currencyArr[i][1]);
       }
   } else {
     $('#output').text(`${response}`)
@@ -24,12 +24,13 @@ function getExchange(response) { //MATH GO HERE?
 
 async function apiCall(baseCurrency) {
   const response = await CurrencyService.getCurrency(baseCurrency);
-  let exchangeResult = getExchange(response);
+  return getExchange(response);
 }
 
 $(document).ready(function() {
   $("#submitBtn").click(function() {
     let baseCurrency = $("#baseCurrency").val();
     apiCall(baseCurrency);
+
   });
 })

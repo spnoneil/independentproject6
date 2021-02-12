@@ -17,7 +17,7 @@ function getExchange(response) {
       if (currencyArr[i][0] === conversion) {
         $('#output').text(`That'll get ya ${amount * currencyArr[i][1]} ${conversion}, there, pal!`);
       } else {
-        $('#output').text(response.status);
+        $('#output').text(`${conversion} ain't real monies, man!`);
       }
   } else {
     $('#output').text(`${response.status}`);
@@ -33,11 +33,20 @@ async function apiCall(baseCurrency) {
   return getExchange(response);
 }
 
+// function addTableClickEvent() {
+//   let c = document.tr.children;
+//   console.log(c)
+
+// }
+
+
 $(document).ready(function() {
   $("#formOne").submit(function(e) {
-    e.preventDefault()
+    e.preventDefault();
     let baseCurrency = $("#baseCurrency").val();
     apiCall(baseCurrency);
     // clearForm();
+    let c = document.tr.children;
+    console.log(c)
   });
 });

@@ -1,34 +1,30 @@
-# (Application Name)
+# Currency Calculator
 
-#### (Brief Description of Application)
+#### Takes user input of 3 letter currency codes, compares exchange rates and returns altered value
 
-#### By (Your Name Here)
+#### By (c)Scott O'Neil, 2/12/2021
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
+* _HTML/CSS/Bootstrap_
+* _JavaScript.jQuery_
+* _Node.js/webpack (see package.json for full list of dependencies)_
 * _here_
-
-## Description
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-* "npm run install"
-* "npm run build"
+* _Clone/download from GitHub (unzip, if necessary)_
+* _Open in code editor of choice_
+* _In terminal, run `npm install` to install necessary dependencies_
+* _Next, run `npm run start` to open LiveServer and generate page_
+* _If any issues, run `npm run build` before `npm run start`_
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Some error handling issues_
 
 ## License
-
+_GPL_
 ## Contact Information
+
+_Contact no one with any comments, questions, or concerns, unless your name is Travis, Leilani, Victoria, or Lela_

@@ -4,10 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './services/currency-service.js';
 
-// function clearForm() {
-//   $("#baseCurrency, #conversionCurrency, #currencyAmount").val("");
-// }
-
 function getExchange(response) {
   if (response.result) {
     const amount = $('#currencyAmount').val();
@@ -33,6 +29,15 @@ async function apiCall(baseCurrency) {
   return getExchange(response);
 }
 
+function addTableClick() {
+  $('tr').click(function() {
+    let tableRows = this.getElementsByTagName('td');
+    $('#baseCurrency').val(tableRows[0].outerText)
+      // console.log(tableRows[0].outerText)
+  });
+
+}
+
 // function addTableClickEvent() {
 //   let c = document.tr.children;
 //   console.log(c)
@@ -46,7 +51,6 @@ $(document).ready(function() {
     let baseCurrency = $("#baseCurrency").val();
     apiCall(baseCurrency);
     // clearForm();
-    let c = document.tr.children;
-    console.log(c)
   });
+  addTableClick();
 });

@@ -15,6 +15,9 @@
 
 * _Clone/download from GitHub (unzip, if necessary)_
 * _Open in code editor of choice_
+* _Head to https://www.exchangerate-api.com/, register for an API key_
+* _Create a file named `.env`_
+* _In the `.env` file, enter `API_KEY=`, followed immediately by the API key you were given_
 * _In terminal, run `npm install` to install necessary dependencies_
 * _Next, run `npm run start` to open LiveServer and generate page_
 * _If any issues, run `npm run build` before `npm run start`_

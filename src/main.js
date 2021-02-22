@@ -21,8 +21,9 @@ function getExchange(response) {
 
 async function apiCall(baseCurrency) {
   const response = await CurrencyService.getCurrency(baseCurrency);
-
-  if (response["error-type"] === "unsupported-code") {
+  if (response["error-type"] === "invalid-key") {
+    $('#output').text("There seems to be something wrong with your API key. Please check to ensure it's been applied correctly!");
+  } else if (response["error-type"] === "unsupported-code") {
     $('#output').text(baseCurrency + ' is not a real moneys, ya dingus! Try a correct 3 letter code!');
   }
   return getExchange(response);
@@ -31,7 +32,7 @@ async function apiCall(baseCurrency) {
 function addTableClick() {
   $('tr').click(function() {
     let tableRows = this.getElementsByTagName('td');
-    $('#baseCurrency').val(tableRows[0].outerText)
+    $('#baseCurrency').val(tableRows[0].outerText);
   });
 }
 
